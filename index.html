@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href=".\css\style.css" rel="stylesheet">
-    <script defer src="script.js"></script>
-    <title>Sobo HomePage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- your JavaScript file, something is missing -->
+  <script defer src="JS/script.js"></script>
+  <title>SoBo</title>
 </head>
-<body>
-
+<body class="light-theme Eng">
+  <header>
     <nav>
-        <ul><div class="page_links">
-            <li><a href='index.html'>Home</a></li>
-            <li><a href='contact.html'>Contact Us</a></li>
-            <li><a href='about.html'>About</a></li>
-        </ul></div>  
+      <ul>
+
+        <li>
+            <input class="langselect Eng" type="image" src="Img/unionjack.jpg"/>
+        </li>
+        <li>
+          <input class="langselect Tr" type="image" src="Img/turkflag.jpg"/>
+      </li>
+        <li><a class='page_link' id="main_link" href="#main">Home</a></li>
+        <li><a class='page_link' id="team_link" href="#team">Our Team</a></li>
+        <li><a class='page_link' id="products_link" href="#products">Products</a></li>
+        <li><a class='page_link' id="contact_link" href="#contact">Contact Us</a></li>
+        <li>
+          <input class="toggle" id="toggledisplay" type="checkbox" />
+      </li>
+      </ul>
     </nav>
+  </header>
+  <section id="main">
+    <h1>SoBo</h1>
+  </section>
 
-    <h1>Welcome to Sobo</h1>
+  <!-- <section id="contact">
+    <h2>Send Us a Fake Message</h2>
+    <form class="myForm">
+      <div class="message">
+        <label for="msg">Message</label>
+        <textarea id="msg"></textarea>
+      </div>
+      <div class="contact">
+        <label for="name">Name</label>
+        <input type="text" id="name">
 
+        <label for="email">Email Address</label>
+        <input type="email" id="email">
 
+        <button type="submit" id="frm-btn">Submit</button>
+      </div>
+    </form>
+  </section> -->
 
-    <p>This is the page to end all pages</p>
-    
 </body>
 </html>

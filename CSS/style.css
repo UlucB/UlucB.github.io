@@ -1,40 +1,288 @@
 :root {
-    --main-bg-color: lightblue 
-}
-
-body {
-    background-color: var(--main-bg-color);
-    display: block;
-    top: 10px;
-    padding-top: 10px;
-}
-
-
-.page_links {
-    list-style-type: none;
-    margin:0;
-    padding:0;
-    display: inline;
-    float: left;
-    position: fixed;
-    width: 100%;
-    top:0;
+    --navHeight:   80px;
+    --yellow:      #F9C74F;
+    --lightCoral:  #EF6E6B;
+    --apricot:     #FFD6BA;
+    --lightGreen:  #BEE3DB;
+    --darkGreen:   #527A78;
+    --white:       #FAF9F9;
+    --black:       #23262E;
+    --blueGray:    #555B6E;
+    --romanSilver: #757E95;
+    --darkblue:    #305573;
+    --orangered:   #ce7048;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* notice how the default light theme colors are set by this class. */
+  .light-theme {
+    --navBg:          var(--lightGreen);
+    --navLinkHoverBg: var(--white);
+    --mainBg:         var(--white);
+    --fontColor:      var(--black);
+    --navLinkColor:   var(--lightCoral);
+    --formBG:         var(--lightCoral);
+    --formInput:      var(--white);
+  }
+  
+  .dark-theme {
+    --navBg:          var(--black);
+    --navLinkHoverBg: var(--darkblue);
+    --mainBg:         var(--darkblue);
+    --fontColor:      var(--white);
+    --navLinkColor:   var(--orangered);
+    --formBG:         var(--black);
+    --formInput:      var(--white);
+  }
+  
+  /* toggle styles begin */
+  .toggle {
+    appearance: none;
+    width: 62px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    border-radius: 50px;
     overflow: hidden;
-    background-color:crimson;
-    left:0;
-}
-
-/* li {
-    float: left;
-} */
-
-li a {
-    float:left;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--black);
+    transition: background-color ease 0.3s;
+  }
+  
+  .toggle:before {
+    content: "";
     display: block;
-    border-right: 1px solid white;
-    margin: 2px;
-    text-align: center;
-    padding: 10px;
-    z-index: 1;
-    color: black;
-}
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    background: var(--romanSilver);
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+  }
+  
+  .toggle:checked {
+    background-color: var(--yellow);
+  }
+  
+  .toggle:checked:before {
+    left: 32px;
+  }
+
+  /* toggle styles end */
+
+  /* langselect styles begin */
+  .langselect {
+    appearance: none;
+    width: 40px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--black);
+    transition: background-color ease 0.3s;
+  }
+  
+  .langselect:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    background: var(--romanSilver);
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+  }
+  
+  .langselect:checked {
+    background-color: var(--yellow);
+  }
+  
+  .langselect:checked:before {
+    left: 32px;
+  }
+
+  /* langselect styles end */
+  
+  header {
+    position: sticky;
+    top: 0;
+  }
+  
+  nav {
+    background: var(--navBg);
+    position: relative;
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--navHeight);
+    padding: 0 10px;
+  }
+  
+  nav ul li {
+    padding: 12px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  nav ul li:hover {
+    background-color: var(--navLinkHoverBg);
+  }
+  
+  nav a {
+    font-family: Poppins sans-serif;
+    font-size: 3.2rem;
+    padding-right: 10px;
+    text-decoration: none;
+    color: var(--navLinkColor);
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--mainBg);
+    /* the calc functin does exactly what you think it does */
+    /* in this case we are calulating the height based on viewport height */
+    /* minus the nav height, cool right! */
+    height: calc(100vh - var(--navHeight));
+  }
+  
+  h1, h2 {
+    font-family: Poppins, sans-serif;
+    color: var(--fontColor);
+  }
+  
+  h1 {
+    font-size: 8rem;
+  }
+  
+  h2 {
+    font-size: 8rem;
+  }
+  
+  .myForm {
+    display: flex;
+    background-color: var(--formBG);
+    font-family: Poppins, sans-serif;
+    border-radius: 8px;
+    padding: 1.8rem;
+  }
+  
+  label {
+    font-size: 1.8rem;
+    color: var(--fontColor);
+  }
+  
+  .message {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+  
+  .message > textarea {
+   flex: 1; 
+   min-width: 45rem;
+   font-size: 1.8rem;
+  }
+  
+  .contact {
+    flex: 1; 
+    order: 1;
+    margin-right: 2em; 
+  }
+  
+  .contact input {
+    width: 100%;
+  }
+  
+  input[type=text]:focus {
+    border: none;
+    outline: none;
+  }
+  
+  .contact input,
+  .contact button {
+    padding: 1em;
+    margin-bottom: 1em;
+    border: none;
+    font-size: 1.8rem;
+  }
+  
+  .contact button {
+   background: var(--darkGreen);
+   color: var(--white);
+  }
+
+  #main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  #main div:nth-child(n+2) {
+    page-break-before: always;
+  }
+  
+   .in_line_picture img {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    height: 35em;
+    width: 35em;
+  }
+
+  .text_about_product {
+    display: block;
+    flex: 2;
+  }
+
+  .text_about_product p {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  /* .in_line_picture img {
+    padding: 1em;
+    border: #23262E;
+    border-width: 5px;
+  } */
+
+  
+  
+  /* Question 2: Media Query */
+  
+  @media screen and (max-width: 600px) {
+    .myForm {flex-direction: column;}
+    .message {order:1; min-height: 15rem;}
+    .contact {order:2}
+    h1, h2 {font-size: 4rem}
+    ul li a {font-size: 2.5rem}
+  }

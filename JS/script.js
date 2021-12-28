@@ -1,3 +1,5 @@
+// Light/Dark Mode
+
 document.querySelector("#toggledisplay").addEventListener("click", (event) => {
     let body = document.querySelector("body")
     if (body.classList.contains('light-theme')) {
@@ -10,6 +12,17 @@ document.querySelector("#toggledisplay").addEventListener("click", (event) => {
 })
 
 
+let lang_select = document.querySelectorAll('.langselect')
+
+document.querySelectorAll('.langselect')[1].addEventListener("click", (event) => {
+    console.log(event.target)
+});
+
+document.querySelectorAll('.langselect')[0].addEventListener("click", (event) => {
+    console.log(event.target)
+});
+
+
 // document.querySelector('.Eng').addEventListener("click", (event) => {
 //     let body = document.querySelector("body")
 //     if (body.classList.contains('Tr')) {
@@ -17,12 +30,12 @@ document.querySelector("#toggledisplay").addEventListener("click", (event) => {
 //         body.classList.add('Eng')}
 // })
 
-document.querySelector('.Tr').addEventListener("click", (event) => {
-    let body = document.querySelector("body")
-    if (body.classList.contains('Eng')) {
-        body.classList.remove('Eng');
-        body.classList.add('Tr')}
-    })
+// document.querySelector('.Tr').addEventListener("click", (event) => {
+//     let body = document.querySelector("body")
+//     if (body.classList.contains('Eng')) {
+//         body.classList.remove('Eng');
+//         body.classList.add('Tr')}
+//     })
 
 let main = document.querySelector('#main');
 function cleanUpIndex() {
@@ -41,10 +54,19 @@ for (let i=0; i<links.length; i ++) {
 }
 
 document.querySelector("#main_link").addEventListener("click", event=>{
-    let website_name = document.createTextNode("SoBo")
-    let h1_node = document.createElement('h1')
-    h1_node.appendChild(website_name)
-    main.appendChild(h1_node)
+    let p = document.createElement('p')
+    let image = document.createElement('img')    
+    image.src = './Img/SOBO Logo.png'
+    p.classList.add('logo')
+    p.appendChild(image)
+    main.appendChild(p)
+
+
+
+    // let website_name = document.createTextNode("SoBo")
+    // let h1_node = document.createElement('h1')
+    // h1_node.appendChild(website_name)
+    // main.appendChild(h1_node)
 })
 
 document.querySelector("#team_link").addEventListener("click", event=>{

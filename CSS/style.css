@@ -275,7 +275,10 @@
     border-width: 5px;
   } */
 
-  
+  .nav_pic {
+    width: 40px;
+    height: 40px;
+  }
   
   /* Question 2: Media Query */
   

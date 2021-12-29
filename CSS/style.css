@@ -41,6 +41,8 @@
     --formInput:      var(--white);
   }
   
+/* START OF NAV BAR */
+
   /* toggle styles begin */
   .toggle {
     appearance: none;
@@ -124,6 +126,7 @@
   header {
     position: sticky;
     top: 0;
+    z-index: 1000;
   }
   
   nav {
@@ -137,7 +140,7 @@
   
   nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: var(--navHeight);
     padding: 0 10px;
@@ -162,17 +165,32 @@
     text-decoration: none;
     color: var(--navLinkColor);
   }
+
+    /* logo in navigation bar */
+
+    .nav_pic {
+      width: 40px;
+      height: 40px;
+    }
   
+  /* END OF NAV BAR */
+  
+  .parent .logo {
+    align-items: center;
+  }
+
   section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background: var(--mainBg);
     /* the calc functin does exactly what you think it does */
     /* in this case we are calulating the height based on viewport height */
     /* minus the nav height, cool right! */
-    height: calc(100vh - var(--navHeight));
+    /* height: calc(100vh - var(--navHeight)); */
+    min-height: calc(100vh - 80px);
+    height: auto;
   }
   
   h1, h2 {
@@ -243,43 +261,99 @@
 
   #main {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: row;
+    flex-grow: 0;
+    /* align-items: flex-start; */
   }
 
-  #main div:nth-child(n+2) {
-    page-break-before: always;
+  .homepage {
+    align-items: center;
   }
-  
-   .in_line_picture img {
+
+  section>.logo {
+    align-items: center;
+  }
+
+  .page_container {
     display: flex;
-    flex-direction: column;
+    flex-flow: row;
+    margin: 5em;
+    position: static;
+  }
+
+   .in_line_picture img {
     padding: 1em;
     height: 35em;
     width: 35em;
+    box-sizing: border-box;
+    
   }
 
-  .text_about_product {
-    display: block;
-    flex: 2;
+  .in_line_picture {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    position: static;
   }
 
   .text_about_product p {
     display: flex;
-    flex-direction: column;
-  
+    box-sizing: border-box;
+    border: solid black;
+    /* padding: max(calc(50vh - 15em));
+    padding: min(6em); */
+    margin: 10px;
+    font-size: 200%;
+    height: 16.4em;
+    align-items: center;
+    justify-content: center;
   }
-  /* .in_line_picture img {
-    padding: 1em;
-    border: #23262E;
-    border-width: 5px;
-  } */
 
-  .nav_pic {
-    width: 40px;
-    height: 40px;
+  .text_about_product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 480px;
+  } 
+
+  .product_wrap {
+    position: relative;
   }
-  
+
+  .product_wrap img {
+    position: static;
+
+  }
+
+  .prod_description {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.8s;
+    color:#BEE3DB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+  }
+
+  .product_wrap:hover .prod_description {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.contact_page {
+    align-items: center;
+
+}
+
+
   /* Question 2: Media Query */
   
   @media screen and (max-width: 600px) {

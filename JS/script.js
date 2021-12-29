@@ -39,6 +39,7 @@ document.querySelectorAll('.langselect')[0].addEventListener("click", (event) =>
 
 let main = document.querySelector('#main');
 function cleanUpIndex() {
+    main.classList.remove('homepage')
     let children_of_main = main.querySelectorAll("*")
     for (let i=0; i<children_of_main.length; i++) {
         children_of_main[i].remove();}
@@ -60,67 +61,133 @@ document.querySelector("#main_link").addEventListener("click", event=>{
     p.classList.add('logo')
     p.appendChild(image)
     main.appendChild(p)
-
-
-
-    // let website_name = document.createTextNode("SoBo")
-    // let h1_node = document.createElement('h1')
-    // h1_node.appendChild(website_name)
-    // main.appendChild(h1_node)
+    main.classList.add('homepage')
 })
 
 document.querySelector("#team_link").addEventListener("click", event=>{
+    let page_container_div = document.createElement('div')
+    page_container_div.classList.add('page_container')
+    
     let p = document.createElement('p')
     let image = document.createElement('img')    
     image.src = './Img/men_at_work.png'
     p.classList.add('in_line_picture')
     p.appendChild(image)
-    main.appendChild(p)
+    page_container_div.appendChild(p)
+    main.appendChild(page_container_div)
 })
 
 document.querySelector("#products_link").addEventListener("click", event=>{
+    let page_container_div = document.createElement('div')
+    page_container_div.classList.add('page_container')
+
     let pic_div = document.createElement('div')
     pic_div.classList.add('in_line_picture')
 
-    let p1 = document.createElement('p')
+    let prod1_wrap = document.createElement('div')
+    prod1_wrap.classList.add('product_wrap')
+
     let image1 = document.createElement('img')    
     image1.src = './Img/product_1.png'
-    p1.appendChild(image1)
+    
+    let p1_description = document.createElement('div')
+    p1_description.classList.add('prod_description')
+    p1_description.innerHTML='You can describe the first item here!'
 
-    let p2 = document.createElement('p')
+    prod1_wrap.appendChild(image1)
+    prod1_wrap.appendChild(p1_description)
+
+
+    let prod2_wrap = document.createElement('div')
+    prod2_wrap.classList.add('product_wrap')
+
     let image2 = document.createElement('img')    
     image2.src = './Img/product_2.png'
-    p2.appendChild(image2)
 
-    pic_div.appendChild(image1)
-    pic_div.appendChild(image2)
+    let p2_description = document.createElement('div')
+    p2_description.classList.add('prod_description')
+    p2_description.innerHTML='You can describe the second item here!'
 
-    main.appendChild(pic_div)
+    prod2_wrap.appendChild(image2)
+    prod2_wrap.appendChild(p2_description)
 
-    // let p2 = document.createElement('p')
-    // p2.classList.add('in_line_picture')
+    let image3 = document.createElement('img')    
+    image3.src = './Img/product_3.jpeg'
 
+    let image4 = document.createElement('img')    
+    image4.src = './Img/product_4.jpeg'
+
+    let image5 = document.createElement('img')    
+    image5.src = './Img/product_5.jpeg'
+
+    let image6 = document.createElement('img')    
+    image6.src = './Img/product_6.jpeg'
+
+    pic_div.appendChild(prod1_wrap)
+    pic_div.appendChild(prod2_wrap)
+    pic_div.appendChild(image3)
+    pic_div.appendChild(image4)
+    pic_div.appendChild(image5)
+    pic_div.appendChild(image6)
+
+    page_container_div.appendChild(pic_div)
 
     let description_div = document.createElement('div')
     description_div.classList.add('text_about_product')
 
-    let p3 = document.createElement('p')
-    // p3.classList.add('text_about_product')
-    p3.innerHTML="Some description of product here"
+    let p7 = document.createElement('p')
+    p7.innerHTML="Some description of product here"
     
-    let p4 = document.createElement('p')
-    p4.innerHTML="Some description of 2nd product here"
+    let p8 = document.createElement('p')
+    p8.innerHTML="Some description of 2nd product here"
 
-    description_div.appendChild(p3)
-    description_div.appendChild(p4)
+    let p9 = document.createElement('p')
+    p9.innerHTML="Some description of 3rd product here"
 
-    main.appendChild(description_div)
+    let p10 = document.createElement('p')
+    p10.innerHTML="Some description of 4th product here"
+    
+    let p11 = document.createElement('p')
+    p11.innerHTML="Some description of 5th product here"
+    
+    let p12 = document.createElement('p')
+    p12.innerHTML="Some description of 6th product here"
 
+    description_div.appendChild(p7)
+    description_div.appendChild(p8)
+    description_div.appendChild(p9)
+    description_div.appendChild(p10)
+    description_div.appendChild(p11)
+    description_div.appendChild(p12)
 
+    page_container_div.appendChild(description_div)
 
+    main.appendChild(page_container_div)
 })
 
-// document.querySelector("#contact_link").addEventListener("click", event=>{
-//     main.appendChild('h1').value="SoBo"
-// })
+document.querySelector("#contact_link").addEventListener("click", event=>{
+    let page_container_div = document.createElement('div')
+    page_container_div.classList.add('page_container')
+    page_container_div.classList.add('contact_page')
+
+    let contact_picture = document.createElement('div')
+    contact_picture.classList.add('in_line_picture')
+    
+    let efe_image = document.createElement('img')    
+    efe_image.src = './Img/efe_atesler.png'
+    contact_picture.appendChild(efe_image)
+    
+    let contact_column = document.createElement('div')
+    contact_column.classList.add('text_about_product')
+
+    let contact_name = document.createElement('p')
+    contact_name.innerHTML="Efe Atesler <br>530 505 40 33 <br>efeatesler@email.com"
+
+    contact_column.appendChild(contact_name)
+
+    page_container_div.appendChild(contact_picture)
+    page_container_div.appendChild(contact_column)
+
+    main.appendChild(page_container_div)
+})
 

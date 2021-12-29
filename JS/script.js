@@ -197,7 +197,22 @@ document.querySelector("#contact_link").addEventListener("click", event=>{
 
     contact_column.appendChild(efe_contact)
     page_container_div.appendChild(contact_column)
+    
+    let pic_div = document.createElement('div')
+    pic_div.classList.add('in_line_picture')
+    pic_div.classList.add('map')
 
+    let iframe = document.createElement('iframe')
+    iframe.src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3125.940496607002!2d27.248641315336343!3d38.41973997964719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b963699c9340c7%3A0xa787e8d8f7c5f948!2zR8O8cnDEsW5hciwgNzIzMi81LiBTayAxN0EsIDM1MDYwIEJvcm5vdmEvxLB6bWlyLCBUdXJrZXk!5e0!3m2!1sen!2sca!4v1640813470361!5m2!1sen!2sca" 
+    iframe.width="600" 
+    iframe.height="450" 
+    iframe.style="border:0;" 
+    iframe.allowfullscreen="" 
+    iframe.loading="lazy"
+
+    pic_div.appendChild(iframe)
+    page_container_div.appendChild(pic_div)
+    
     main.appendChild(page_container_div)
 
 })

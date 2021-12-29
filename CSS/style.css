@@ -1,5 +1,5 @@
 :root {
-    --navHeight:   80px;
+    --navHeight:   12vh;
     --yellow:      #F9C74F;
     --purple:      #18384e;
     --apricot:     #FFD6BA;
@@ -155,7 +155,7 @@
   }
   
   nav ul li {
-    padding: 12px 10px;
+    padding: 10px 10px;
     cursor: pointer;
     transition: background 0.3s ease;
     border-radius: 4px;
@@ -197,7 +197,7 @@
     /* in this case we are calulating the height based on viewport height */
     /* minus the nav height, cool right! */
     /* height: calc(100vh - var(--navHeight)); */
-    min-height: calc(100vh - 80px);
+    min-height: 88vh;
     height: fit-content;
   }
   
@@ -272,8 +272,9 @@
     flex-flow: row;
     flex-grow: 0;
     background-image: url("../Img/background_img.jpg");
-    background-size: auto;
-    width: 100vw;
+    background-size: 100vw;
+    min-width: 100vw;
+    min-height: 88vh;
     /* align-items: flex-start; */
   }
 
@@ -367,6 +368,10 @@
     align-items: center;
 }
 
+.map {
+  height: 35em;
+  width: 70em;
+}
 
   /* Question 2: Media Query */
   
@@ -386,7 +391,7 @@
   } */
 
   @media screen and (max-height: 420px) {
-    .logo {height: 25%; width: 25%}
+    .logo {width: 25%}
     .in_line_picture img {height: 25em; width: 25em}
     .text_about_product p {min-height:250px; height:250px}
     .page_container {margin: 1em}

@@ -134,6 +134,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    width:100vw;
   }
   
   nav {
@@ -271,8 +272,8 @@
     flex-flow: row;
     flex-grow: 0;
     background-image: url("../Img/background_img.jpg");
-    background-size: cover;
-
+    background-size: auto;
+    width: 100vw;
     /* align-items: flex-start; */
   }
 

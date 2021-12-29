@@ -55,25 +55,61 @@ for (let i=0; i<links.length; i ++) {
 }
 
 document.querySelector("#main_link").addEventListener("click", event=>{
-    let p = document.createElement('p')
     let image = document.createElement('img')    
     image.src = './Img/SOBO Logo.png'
-    p.classList.add('logo')
-    p.appendChild(image)
-    main.appendChild(p)
+    image.classList.add('logo')
+    main.appendChild(image)
     main.classList.add('homepage')
 })
 
 document.querySelector("#team_link").addEventListener("click", event=>{
     let page_container_div = document.createElement('div')
     page_container_div.classList.add('page_container')
+    page_container_div.classList.add('team_page')
+
+    let contact_picture = document.createElement('div')
+    contact_picture.classList.add('in_line_picture')
     
-    let p = document.createElement('p')
-    let image = document.createElement('img')    
-    image.src = './Img/men_at_work.png'
-    p.classList.add('in_line_picture')
-    p.appendChild(image)
-    page_container_div.appendChild(p)
+    let efe_image = document.createElement('img')    
+    efe_image.src = './Img/efe_atesler.png'
+    contact_picture.appendChild(efe_image)
+    
+    let contact_column = document.createElement('div')
+    contact_column.classList.add('text_about_product')
+
+    let efe_contact = document.createElement('p')
+    efe_contact.innerHTML="Efe Atesler<br>CEO & Founder<br>0530 50 540 33 <br>efeatesler@email.com"
+
+    contact_column.appendChild(efe_contact)
+
+    let arda_image = document.createElement('img')    
+    arda_image.src = './Img/arda_atesler.png'
+    
+    let arda_column = document.createElement('div')
+    arda_column.classList.add('text_about_product')
+
+    let arda_contact = document.createElement('p')
+    arda_contact.innerHTML="Arda Atesler<br>Co-Founder<br>0530 50 540 34<br>ardaatesler97@hotmail.com"
+
+    contact_picture.appendChild(arda_image)
+    contact_column.appendChild(arda_contact);
+
+    let avi_image = document.createElement('img')    
+    avi_image.src = './Img/avi_aruh.png'
+    
+    let avi_column = document.createElement('div')
+    avi_column.classList.add('text_about_product')
+
+    let avi_contact = document.createElement('p')
+    avi_contact.innerHTML="Avram Aruh<br>yüksek kimya mühendisi<br>0506 50 967 19<br>avram.aruh@gmail.com"
+
+    contact_picture.appendChild(avi_image)
+    contact_column.appendChild(avi_contact);
+
+
+    page_container_div.appendChild(contact_picture)
+    page_container_div.appendChild(contact_column)
+
     main.appendChild(page_container_div)
 })
 
@@ -88,7 +124,7 @@ document.querySelector("#products_link").addEventListener("click", event=>{
     prod1_wrap.classList.add('product_wrap')
 
     let image1 = document.createElement('img')    
-    image1.src = './Img/product_1.png'
+    image1.src = './Img/product_6.jpeg'
     
     let p1_description = document.createElement('div')
     p1_description.classList.add('prod_description')
@@ -97,12 +133,11 @@ document.querySelector("#products_link").addEventListener("click", event=>{
     prod1_wrap.appendChild(image1)
     prod1_wrap.appendChild(p1_description)
 
-
     let prod2_wrap = document.createElement('div')
     prod2_wrap.classList.add('product_wrap')
 
     let image2 = document.createElement('img')    
-    image2.src = './Img/product_2.png'
+    image2.src = './Img/product_3.jpeg'
 
     let p2_description = document.createElement('div')
     p2_description.classList.add('prod_description')
@@ -112,53 +147,37 @@ document.querySelector("#products_link").addEventListener("click", event=>{
     prod2_wrap.appendChild(p2_description)
 
     let image3 = document.createElement('img')    
-    image3.src = './Img/product_3.jpeg'
-
-    let image4 = document.createElement('img')    
-    image4.src = './Img/product_4.jpeg'
-
-    let image5 = document.createElement('img')    
-    image5.src = './Img/product_5.jpeg'
+    image3.src = './Img/product_4.jpeg'
 
     let image6 = document.createElement('img')    
-    image6.src = './Img/product_6.jpeg'
+    image6.src = './Img/product_5.jpeg'
 
     pic_div.appendChild(prod1_wrap)
     pic_div.appendChild(prod2_wrap)
     pic_div.appendChild(image3)
-    pic_div.appendChild(image4)
-    pic_div.appendChild(image5)
     pic_div.appendChild(image6)
 
     page_container_div.appendChild(pic_div)
 
     let description_div = document.createElement('div')
     description_div.classList.add('text_about_product')
-
-    let p7 = document.createElement('p')
-    p7.innerHTML="Some description of product here"
     
+    let p7 = document.createElement('p')
+    p7.innerHTML="Hümik Fulvik Asit: <br>%40 organik madde içerir. Köklendirici bir üründür. Kullanan musterilemiz piyasadaki en iyi humik asiti olduğuna dair geri dönüş sağlamışlardır. Humik asit konusunda da aynı şekilde memnuniyet garantisi vermekteyiz. Bu ürünün asıl amacı köklendirmeyi arttırmaktır. Aynı zamanda toprağın pH değerini düzenler ve bitkiye fazladan kuvvet verir. Kullanım şekli olarak, fide dikiminden 1 hafta sonra kullanılması tavsiye edilir. Miktar olarak ise her 1 dönüm arazi icin kullanılacağı ürüne bağlı olarak 0.5-1 litre kullanılması tavsiye edilir. Ürünümüzün damlamadan 15 günde 1, toplamda 3 kere uygulama ile kullanılması önerilmektedir."
+
     let p8 = document.createElement('p')
-    p8.innerHTML="Some description of 2nd product here"
+    p8.innerHTML="Üre Amonyum Nitrat Sülfat Çözeltisi: <br><br>Günümüzdeki katı üre fiyatlarındaki artış ve piyasada amonyum nitrata ulaşılamadığı icin ürün bu sebepten dolayı tasarlanmıştır. Her rahat bir kullanım hem de uygun fiyatından ötürü piyasada çok talep aldığımız bir ürünümüzdür. İcinde %32 üre azotu, %8 amonyum azotu ve %8 nitrat azotu bulundurmaktadır. Ürün kullanıldığı bitkiye hızlı bir şekilde boy artışı sağlamaktadır. Kullanım şekli olarak, damlama yöntemi ile her 1 dönüm arazi icin 3-4 litre kullanılması önerilmektedir.<br><br></br>Ürünün maliyeti, her 20 litrelik ambalaj icin 101.6₺dir.<br>Satış fiyatı ise, 20 litrelik ambalajlarda satılıp, 20 Litresi 200₺ + KDVdir"
 
     let p9 = document.createElement('p')
-    p9.innerHTML="Some description of 3rd product here"
-
-    let p10 = document.createElement('p')
-    p10.innerHTML="Some description of 4th product here"
+    p9.innerHTML="Sıvı Deniz Yosunu Gubresi: <br> Sıvı deniz yosunu, saf deniz yosunu konsantresi, alginik asit, organik karbon, gibberalik asit, aminoasitler ve özel bitki besinleri ile etkili bir kombinasyonudur. Deniz yosunu ekstraktindan elde edilen oksinlerin ve sitokininlerin fiziksel yöntemleri ile oluşan bioaktivatördür. Faydaları, kök hacminin ve yatay kök gelişiminin artmasına yardımcı olur. Böylece bitkinin toprağa daha sıkı tutunmasını ve gerekli besin maddelerini daha iyi emilimini sağlar. Bitki ve meyve gelişimindeki tüm doğal surecleri hizlandirir. Uygulama meyve çiçeklenme döneminin basında ve meyve tutumundan sonra başlar. Gerekli sonuçları elde etmek için en az 2 uygulama yeterlidir. Bakteri ve mantarlara karşı doğal bir savunma sağlar. Özellikle meyve boyutunu geliştirmek ve estetik kaliteyi arttırmak istenen ürünlerde güvenle kullanılabilir. Aşırı soguk, yüksek sıcaklık, kuraklık ve tuzluluk gibi çeşitli stres koşullarına karşı bitkinin direncini arttırır. 100 litre suya 300 cc kullanımı tavsiye edilir. Damlama yöntemi ile ise 1 dekara 600-1000 cc kullanımı tavsiye edilir. Bu ürünün içinde her 1 litre icin 150 gram deniz yosunu, 175 gram aminoasit, 200 cc Gibberelik asit, 200 gram ETHA ile şelatlandırılmış olup sitrik asit aracılığı ile 4.6 pH değerine sabitlendirilmistir."
     
     let p11 = document.createElement('p')
     p11.innerHTML="Some description of 5th product here"
-    
-    let p12 = document.createElement('p')
-    p12.innerHTML="Some description of 6th product here"
 
     description_div.appendChild(p7)
     description_div.appendChild(p8)
     description_div.appendChild(p9)
-    description_div.appendChild(p10)
     description_div.appendChild(p11)
-    description_div.appendChild(p12)
 
     page_container_div.appendChild(description_div)
 
@@ -170,24 +189,16 @@ document.querySelector("#contact_link").addEventListener("click", event=>{
     page_container_div.classList.add('page_container')
     page_container_div.classList.add('contact_page')
 
-    let contact_picture = document.createElement('div')
-    contact_picture.classList.add('in_line_picture')
-    
-    let efe_image = document.createElement('img')    
-    efe_image.src = './Img/efe_atesler.png'
-    contact_picture.appendChild(efe_image)
-    
     let contact_column = document.createElement('div')
     contact_column.classList.add('text_about_product')
 
-    let contact_name = document.createElement('p')
-    contact_name.innerHTML="Efe Atesler <br>530 505 40 33 <br>efeatesler@email.com"
+    let efe_contact = document.createElement('p')
+    efe_contact.innerHTML="Efe Atesler<br>CEO & Founder<br>0530 50 540 33 <br>efeatesler@email.com"
 
-    contact_column.appendChild(contact_name)
-
-    page_container_div.appendChild(contact_picture)
+    contact_column.appendChild(efe_contact)
     page_container_div.appendChild(contact_column)
 
     main.appendChild(page_container_div)
+
 })
 

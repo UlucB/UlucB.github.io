@@ -1,7 +1,7 @@
 :root {
     --navHeight:   80px;
     --yellow:      #F9C74F;
-    --lightCoral:  #EF6E6B;
+    --purple:      #18384e;
     --apricot:     #FFD6BA;
     --lightGreen:  #BEE3DB;
     --darkGreen:   #527A78;
@@ -11,6 +11,7 @@
     --romanSilver: #757E95;
     --darkblue:    #305573;
     --orangered:   #ce7048;
+    --lightblue:       #bdd5fa;
   }
   
   * {
@@ -22,13 +23,16 @@
   
   /* notice how the default light theme colors are set by this class. */
   .light-theme {
-    --navBg:          var(--lightGreen);
-    --navLinkHoverBg: var(--white);
+    --navBg:          var(--purple);
+    --navLinkHoverBg: var(--yellow);
     --mainBg:         var(--white);
     --fontColor:      var(--black);
-    --navLinkColor:   var(--lightCoral);
-    --formBG:         var(--lightCoral);
+    --navLinkColor:   var(--white);
+    --formBG:         var(--purple);
     --formInput:      var(--white);
+    --picture_border: var(--black);
+    --prod_text_border:var(--black);
+    --prod_textBG:    var(--white);
   }
   
   .dark-theme {
@@ -39,6 +43,9 @@
     --navLinkColor:   var(--orangered);
     --formBG:         var(--black);
     --formInput:      var(--white);
+    --prod_textBG:    var(--lightblue);
+    --picture_border: var(--white);
+    --prod_text_border:var(--white);
   }
   
 /* START OF NAV BAR */
@@ -152,6 +159,7 @@
     transition: background 0.3s ease;
     border-radius: 4px;
     position: relative;
+
   }
   
   nav ul li:hover {
@@ -161,7 +169,6 @@
   nav a {
     font-family: Poppins sans-serif;
     font-size: 3.2rem;
-    padding-right: 10px;
     text-decoration: none;
     color: var(--navLinkColor);
   }
@@ -190,7 +197,7 @@
     /* minus the nav height, cool right! */
     /* height: calc(100vh - var(--navHeight)); */
     min-height: calc(100vh - 80px);
-    height: auto;
+    height: fit-content;
   }
   
   h1, h2 {
@@ -263,6 +270,9 @@
     display: flex;
     flex-flow: row;
     flex-grow: 0;
+    background-image: url("../Img/background_img.jpg");
+    background-size: cover;
+
     /* align-items: flex-start; */
   }
 
@@ -282,11 +292,11 @@
   }
 
    .in_line_picture img {
-    padding: 1em;
+    margin: 1em;
     height: 35em;
     width: 35em;
     box-sizing: border-box;
-    
+    border: solid var(--picture_border);
   }
 
   .in_line_picture {
@@ -294,19 +304,23 @@
     flex-direction: column; 
     align-items: flex-start;
     position: static;
+    justify-content: space-evenly;
   }
 
   .text_about_product p {
     display: flex;
     box-sizing: border-box;
-    border: solid black;
+    border: solid var(--prod_text_border);
     /* padding: max(calc(50vh - 15em));
     padding: min(6em); */
     margin: 10px;
     font-size: 200%;
     height: 16.4em;
+    min-height: 350px;
+    max-width: 2000px;
     align-items: center;
     justify-content: center;
+    background: var(--prod_textBG);
   }
 
   .text_about_product {
@@ -350,7 +364,6 @@
 
 .contact_page {
     align-items: center;
-
 }
 
 
@@ -362,4 +375,18 @@
     .contact {order:2}
     h1, h2 {font-size: 4rem}
     ul li a {font-size: 2.5rem}
+    :root {--navHeight:  50px}
+  }
+
+  /* @media screen and (max-width: 380px) {
+    :root {--navHeight: 25px}
+    
+    
+  } */
+
+  @media screen and (max-height: 420px) {
+    .logo {height: 25%; width: 25%}
+    .in_line_picture img {height: 25em; width: 25em}
+    .text_about_product p {min-height:250px; height:250px}
+    .page_container {margin: 1em}
   }
